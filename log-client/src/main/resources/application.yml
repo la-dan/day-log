@@ -1,0 +1,9 @@
+server:
+  url: 192.168.111.32
+
+
+url:
+  getCode: http://localhost:8080/getCode
+  addUser:
+    host: localhost
+    path: /addUser

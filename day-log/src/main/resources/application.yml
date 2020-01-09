@@ -1,0 +1,54 @@
+spring:
+  devtools:
+    restart:
+      enabled: true
+
+  liquibase:
+    change-log: classpath:/changelog/master.xml
+
+  mail:
+    #邮件协议smtp
+    host: smtp.exmail.qq.com
+    #发送者的邮件的用户名
+    username: ljh@vlinker.cn
+    #使用的编码
+    default-encoding: utf-8
+    #移动端客户授权码(在邮箱中设置)
+    password: BD7piaF5PBr9T5GS
+    #日报提交目标邮箱
+    to: lcz@vlinker.cn
+
+
+  #通用数据源配置
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://192.168.111.32:5432/day_log?useUnicode=true&characterEncoding=utf8&useSSL=false
+    username: log
+    password: 123456
+    minimumIdle: 5
+    maximumPoolSize: 20
+    connectionTimeout: 60000
+    idleTimeout: 30000
+    maxLifetime: 1800000
+    validationTimeout: 1800000
+
+  # JPA 相关配置
+  jpa:
+    database-platform: org.hibernate.dialect.PostgreSQL95Dialect
+    show-sql: false
+    properties:
+      hibernate:
+        temp:
+          use_jdbc_metadata_defaults: false
+
+logging:
+  level:
+    root: info
+    cn.vlinker.chongming: info
+    jdbc.sqlonly: warn
+    jdbc.resultset: warn
+    jdbc.audt: warn
+    jdbc.connection: warn
+
+server:
+  port: 32320
